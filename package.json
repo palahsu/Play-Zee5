@@ -2,7 +2,7 @@
     "name": "Play-Zee5",
     "version": "1.0.0",
     "description": "The Online ZEE5 Player and Downloader with Premium and Free Content ",
-    "main": "worker.js",
+    "main": "ZEE.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/palahsu/Play-Zee5.git"
