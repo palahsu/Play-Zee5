@@ -1,19 +1,10 @@
 {
-    "name": "Play-Zee5",
-    "version": "1.0.0",
-    "description": "The Online ZEE5 Player and Downloader with Premium and Free Content ",
-    "main": "ZEE.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/palahsu/Play-Zee5.git"
-    },
-    "keywords": [
-        "Play-Zee5"
-    ],
-    "author": "palahsu",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/palahsu/Play-Zee5/issues"
-    },
-    "homepage": https://github.com/palahsu/Play-Zee5#readme"
+  "name": "Play-Zee5",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./ZEE.js"
+  },
+  "dependencies": {
+  }
 }
