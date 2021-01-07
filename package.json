@@ -1,0 +1,38 @@
+{
+  "name": "Play-Zee5,
+  "version": "0.0.1",
+  "description": "A simple deployment to Heroku!",
+  "main": "ZEE.js",
+  "repository": "https://github.com/palahsu/Play-Zee5",
+  "author": "Noah Prail <me@nprail.me>",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/palahsu/Play-Zee5",
+  "scripts": {
+    "start": "node ZEE.js",
+    "dev": "nodemon ZEE.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-jwt": "^5.3.1",
+    "helmet": "^3.8.1",
+    "jsonwebtoken": "^8.2.2",
+    "mongoose": "^5.1.4",
+    "morgan": "^1.8.2",
+    "shortid": "^2.2.8"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "nodemon": "^1.12.1"
+  }
+}

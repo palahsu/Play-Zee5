@@ -1,9 +1,0 @@
-{
-  "name": "Play-Zee5",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "start": "ZEE.js"
-  },
-  "dependencies": {
-  }
