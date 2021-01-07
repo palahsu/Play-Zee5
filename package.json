@@ -1,19 +1,21 @@
 {
-    "name": "Play-Zee5",
-    "version": "1.0.0",
-    "description": "The Online ZEE5 Player and Downloader with Premium and Free Content With All Facality ",
-    "main": "worker.js",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/palahsu/Play-Zee5/.git"
-    },
-    "keywords": [
-        "zee5"
-    ],
-    "author": "",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/palahsu/Play-Zee5/issues"
-    },
-    "homepage": https://github.com/palahsu/Play-Zee5/#readme"
+  "name": "node-example",
+  "version": "1.0.0",
+  "description": "This example is so cool.",
+  "main": "ZEE.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
+  "author": "jane-doe",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.9.8"
+  },
+  "engines": {
+    "node": "10.x"
+  }
 }
