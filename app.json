@@ -1,7 +1,7 @@
 {
   "name": "Play-Zee5",
   "version": "0.0.0",
-  "public": true,
+  "private": true,
   "scripts": {
     "start": "node ./ZEE.js"
   },
