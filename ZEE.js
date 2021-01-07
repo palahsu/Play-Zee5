@@ -1,271 +1,134 @@
-addEventListener('fetch', event => {
-    event.respondWith(handleRequest(event.request))
-})
 
-async function handleRequest(request) {
+<!doctype html>
+<html lang="en">
 
-    var videoPath = new URL(request.url).pathname
-
-    var videoQuery = new URL(request.url).searchParams.get('url')
-
-    const html = `<!DOCTYPE html>
-    <html>
 <head>
-<meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="description" content="It is a Zee5 Online premium streamer with all features">
-    <meta name="author" content="Avishkar Patil">
-    <meta name="copyright" content="This Created by Avishkar Patil">
-    <meta name="robots" content="all" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="https://chatecrew.live/swarup/img/favicon.png">
-  <title>Avi Patil | ZEE5 Online Player and Downloader !!</title>
-  <link rel="stylesheet" href="https://avipatilpro.github.io/host/z5style.css">
-  <link rel="stylesheet" href="https://avipatilpro.github.io/host/zstyle.css">
-<style>
-body{ background-color:#202020;}
-</style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"
+        integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+
+    
+    <title>Zee5 Streamer</title>
+    
 </head>
-<body>
-  <h1 style="color:orange; text-align:center;">ZEE5 HLS Streamer </h1>
-  
-<br><br><br>
-  <div><form method="get"  action="https://z5.movhdapp.ml" _lpchecked="1">
-  <center>
- <div class="bar">
-<input type="search" class="searchbar" name="url" value="" placeholder="Enter ZEE5 URL or VIDEO ID" autocomplete="off">
-<a href="https://zee5.com/"> <img class="zee5" src="https://www.zee5.com/images/ZEE5_logo.png" title="Go To ZEE5 Site"></a>
-</div>
-<button  class="button" type="submit" value="">
-Stream
-</button>
-<br><br><br><br>
-<p style="color:blue; text-align:center;font-family: 'Corben', cursive;">Use This Pattern -->  <br><code style="color:white;">z5.movhdapp.ml/ZEE5_VIDEO_ID</code><br><code style="color:white;">z5.movhdapp.ml/?url=ZEE5_VIDEO_URL</code></p>
-<footer class="footer">
-            <div class="container">
-                <span class="copyright"><a style="text-decoration: none; color: #9C9AB3;" href="https://avipatilweb.me/">© 2021 Avishkar Patil</a></span>
+
+<body class="bg-primary" style="background-color:white;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="/">Maxx Zee5</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+ <br>
+  <div class="text-center">
+      <img src="https://www.zee5.com/images/ZEE5_logo.png" class="rounded mx-auto d-block" alt="Instagram Icon">
+  </div>
+
+    <div class="text-center">
+        <form class="form-download" method="POST" id="download" action="/details">
+            <h1 class="form-download-heading display-4s" style = "color:white"">Zee5 Streamer Premium</h1>
+            <p>Made with 💖 by @cyberw4rriors
+    </div>
+
+    <div>
+        <br>
+    </div>
+	<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+		<link rel="shortcut icon" href="https://www.zee5.com/images/favicon.ico?ver=2.49.64"/>
+	</head>	
+	<body style="background-color:black;">
+		<div id = "gif" align = "center">
+ <img src = ''/>
+ </div>
+		<p align = "center" style = "color:white"><b>Stream premium content 100% free</b></p>
+		<div id = "menu" align = "center" style = "color:yellow">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                      </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="/fetch" method="POST">
+                </form>
+        </div>
+    </nav>
+
+                <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+                    <form action="/fetch" method="POST">
+                        <div class="form-row">
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                <input type="text" name="link" class="form-control form-control-lg"
+                                    placeholder="paste zee5 link">
+                            
+                            <div class="col-12 col-md-3">
+                                <button type="submit" class="btn btn-block btn-lg btn-success">⏭ PLAY</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </footer>
-</body>
-</html>`
+        </div>
+        <br>
+        <br>
+    </header>
 
-    if (videoPath == "/" && videoQuery == null) {
-        
-        return new Response(html, {
-    headers: {
-      "content-type": "text/html;charset=UTF-8",
-    },
-  })
-        
-    } else {
-        if (videoPath == "/") {
-            var videoId = videoQuery.split("/").pop()
-        } else {
-            var videoId = videoPath.replace("/", "")
-        }
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+                              </div>
+		<p align = "center" style = "color:white"><b>90+ live TV channels and 1.25 lac+ hours of Views</b></p>
+		<div id = "menu" align = "center" style = "color:black">
+			<form action ="" method ="POST">
+				
+				
+		 <div>
+            <br>
+        </div>
 
-        var mainFetch = await fetch(`https://gwapi.zee5.com/content/details/${videoId}?translation=en&country=IN&version=2`, {
-            headers: {
-                "x-access-token": await token(),
-                'Content-Type': 'application/json'
-            }
-        })
-        var mainFetch = await mainFetch.json()
+        <div class="text-center">
+            <p><strong>Visitors Count</strong></p>
+            <a href="#" title="Counter"><img
+                    src="https://counter7.wheredoyoucomefrom.ovh/private/freecounterstat.php?c=54bfsfnzbfjxyjeprpnqgpdktmt3eecc"
+                    border="0" title="Counter" alt="Counter"></a>
+        </div>
+        <center>
+				<br><br>
+				<a target ="MaxxBots.html" href = "../external.html?link=https://https://maxxzee5.herokuapp.com/MaxxBots.html"><button class="btn btn-outline-light btn-primary my-2 my-sm-0" onclick=>MaxxBots</button></a>
+				&nbsp; &nbsp; 
+				</center>
+			
+	
+<!-- Mirrored from unofficialzee5.herokuapp.com/ by HTTrack Website Copier/3.x [XR&CO'2017], Mon, 07 Dec 2020 00:50:57 GMT -->
+</html>
 
-        if (mainFetch.title == undefined) {
-            return new Response("<code>This Is Invalid Video ID or URL Please Check Your Link format ", {
-                status: 400,
-                headers: ({
-                    "Content-Type": "text/html",
-                    "Cache-Control": "no-cache, no-store, must-revalidate",
-                    "Access-Control-Allow-Origin": "*",
-                    "Made-By": "https://github.com/avipatilpro/ZEE5/"
-                })
-            })
-        } else {
-            var pass = ({
-                title: mainFetch.title,
-                image: mainFetch.image_url.replace("270x152", "1170x658"),
-                hls: `https://zee5vodnd.akamaized.net${mainFetch.hls[0].replace("drm", "hls")}${await videotoken()}`
-            })
-            return new Response(await template(pass.title, pass.image, pass.hls), {
-                status: 200,
-                headers: ({
-                    "Content-Type": "text/html",
-                    "Cache-Control": "no-cache, no-store, must-revalidate",
-                    "Access-Control-Allow-Origin": "*",
-                    "Made-By": "https://github.com/avipatilpro/ZEE5/"
-                })
-            })
-        }
-    }
-}
+        <div class="footer text-center">
+            <br>
+            <p>&copy; <strong>MaxxBots | All rights reserved.</strong></p>
+        </div>
+    <!--BootStrap code goes here -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-async function videotoken() {
-    var videotokenfetch = await fetch('https://useraction.zee5.com/tokennd/')
-    var videotokenfetch = await videotokenfetch.json()
-    return videotokenfetch.video_token
-}
 
-async function token() {
-    var tokenfetch = await fetch('https://useraction.zee5.com/token/platform_tokens.php?platform_name=web_app')
-    var tokenfetch = await tokenfetch.json()
-    return tokenfetch.token
-}
+	</body>	
+</html>
 
-async function template(title, thumb, hls) {
-    return `<html>
-<head>
-  <title>${title} | Avishkar Patil</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="shortcut icon" type="image/x-icon" href="https://telegra.ph/file/22da4d29204c748a526a4.png">
-  <link rel='stylesheet' href='https://cdn.plyr.io/3.6.2/plyr.css'>
-  <link href="https://fonts.googleapis.com/css?family=Poppins|Quattrocento+Sans" rel="stylesheet"/>
-  <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js"></script>
-</head>
-<style>
-html {
-  font-family: Poppins;
-  background: #000;
-  margin: 0;
-  padding: 0
-}
-.loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index: 9999;
-    }
-    
-    .loading-text {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-        text-align: center;
-        width: 100%;
-        height: 100px;
-        line-height: 100px;
-    }
-    
-    .loading-text span {
-        display: inline-block;
-        margin: 0 5px;
-        color: #00b3ff;
-        font-family: 'Quattrocento Sans', sans-serif;
-    }
-    
-    .loading-text span:nth-child(1) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 0s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(2) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 0.2s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(3) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 0.4s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(4) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 0.6s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(5) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 0.8s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(6) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 1s infinite linear alternate;
-    }
-    
-    .loading-text span:nth-child(7) {
-        filter: blur(0px);
-        animation: blur-text 1.5s 1.2s infinite linear alternate;
-    }
-    
-    @keyframes blur-text {
-        0% {
-            filter: blur(0px);
-        }
-        100% {
-            filter: blur(4px);
-        }
-    }
-    .plyr__video-wrapper::before {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        z-index: 10;
-        content: '';
-        height: 35px;
-        width: 35px;
-        background: url('https://telegra.ph/file/22da4d29204c748a526a4.png') no-repeat;
-        background-size: 35px auto, auto;
-    }
-</style>
-<body>
-  <div id="loading" class="loading">
-<div class="loading-text">
-    <span class="loading-text-words">L</span>
-    <span class="loading-text-words">O</span>
-    <span class="loading-text-words">A</span>
-    <span class="loading-text-words">D</span>
-    <span class="loading-text-words">I</span>
-    <span class="loading-text-words">N</span>
-    <span class="loading-text-words">G</span>
-</div>
-</div>
-  <video controls crossorigin poster="${thumb}" playsinline>
-    <source type="application/x-mpegURL" src="${hls}"> </video>
-</body>
-<script>
-  setTimeout(videovisible, 3000)
-function videovisible() {
-    document.getElementById('loading').style.display = 'none'
-}
-document.addEventListener("DOMContentLoaded", () => {
-  const e = document.querySelector("video"),
-    n = e.getElementsByTagName("source")[0].src,
-    o = {};
-  if(Hls.isSupported()) {
-    var config = {
-      maxMaxBufferLength: 100,
-    };
-    const t = new Hls(config);
-    t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
-      const s = t.levels.map(e => e.height);
-      o.quality = {
-        default: s[0],
-        options: s,
-        forced: !0,
-        onChange: e => (function(e) {
-          window.hls.levels.forEach((n, o) => {
-            n.height === e && (window.hls.currentLevel = o)
-          })
-        })(e)
-      };
-      new Plyr(e, o)
-    }), t.attachMedia(e), window.hls = t
-  } else {
-    new Plyr(e, o)
-  }
-});
-</script>
-</html>`
-}
+		
+	
+
+ 
