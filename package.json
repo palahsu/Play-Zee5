@@ -1,5 +1,13 @@
-"scripts": {
-    "start": "node ZEE.js",
-    "test": "jest"
+{
+
+  "name": "download",
+
+  "description": "All in one bot for torrenting",
+
+  "repository": "https://github.com/palahsu/Play-Zee5",
+
+  "keywords": ["node"]
+
+  
 
 }
