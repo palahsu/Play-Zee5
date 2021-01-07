@@ -1,17 +1,9 @@
 {
-  "name": "json-server-deploy",
-  "version": "1.0.0",
-  "description": "Simple json database to deploy to the host of your choice",
-  "main": "app.js",
+  "name": "Play-Zee5",
+  "version": "0.0.0",
+  "public": true,
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./ZEE.js"
   },
-  "keywords": [
-    "json-server,heroku, node, REST API"
-  ],
-  "author": "p",
-  "license": "ISC",
   "dependencies": {
-    "json-server": "^0.16.2"
   }
-}
