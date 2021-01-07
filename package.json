@@ -1,13 +1,5 @@
-{
-
-  "name": "download",
-
-  "description": "All in one ",
-
-  "repository": "https://github.com/palahsu/Play-Zee5",
-
-  "keywords": ["node", "express"]
-
-  
+"scripts": {
+    "start": "node ZEE.js",
+    "test": "jest"
 
 }
