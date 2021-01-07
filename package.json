@@ -1,7 +1,7 @@
 {
-  "name": "node-example",
+  "name": "Play-Zee5",
   "version": "1.0.0",
-  "description": "This example is so cool.",
+  "description": "so cool.",
   "main": "ZEE.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "example",
     "heroku"
   ],
-  "author": "jane-doe",
+  "author": "palahsu",
   "license": "MIT",
   "dependencies": {
     "express": "^4.9.8"
