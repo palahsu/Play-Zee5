@@ -1,6 +1,4 @@
-{   "scripts": {
-  "start": "node ZEE.js"
-}
+{
     "name": "zee5",
     "version": "1.0.0",
     "description": "The Ultimate Zee5 Player using Cloudflare Worker",
@@ -10,7 +8,7 @@
         "url": "git+https://github.com/palahsu/Play-Zee5.git"
     },
     "keywords": [
-        "ZEE"
+        "zee5"
     ],
     "author": "P",
     "license": "Apache-2.0",
