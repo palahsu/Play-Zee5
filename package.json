@@ -1,4 +1,6 @@
-{
+{   "scripts": {
+  "start": "node ZEE.js"
+}
     "name": "zee5",
     "version": "1.0.0",
     "description": "The Ultimate Zee5 Player using Cloudflare Worker",
