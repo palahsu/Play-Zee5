@@ -75,3 +75,35 @@ async function token() {
 async function template(title, thumb, hls) {
     return `<html><head><title>${title}</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><link rel='stylesheet' href='https://cdn.plyr.io/3.6.2/plyr.css'><link href="https://fonts.googleapis.com/css?family=Poppins|Quattrocento+Sans" rel="stylesheet" /> <script src="https://cdn.plyr.io/3.6.2/plyr.js"></script> <script src="https://cdn.jsdelivr.net/npm/hls.js"></script> </head><style>html{font-family:Poppins;background:#000;margin:0;padding:0}</style><body><video controls crossorigin poster="${thumb}" playsinline> <source type="application/x-mpegURL" src="${hls}"> </video></body> <script>document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector("video"),n=e.getElementsByTagName("source")[0].src,o={};if(Hls.isSupported()){var config={maxMaxBufferLength:100,};const t=new Hls(config);t.loadSource(n),t.on(Hls.Events.MANIFEST_PARSED,function(n,l){const s=t.levels.map(e=>e.height);o.quality={default:s[0],options:s,forced:!0,onChange:e=>(function(e){window.hls.levels.forEach((n,o)=>{n.height===e&&(window.hls.currentLevel=o)})})(e)};new Plyr(e,o)}),t.attachMedia(e),window.hls=t}else{new Plyr(e,o)}});</script> </html>`
 }
+  setTimeout(videovisible, 3000)
+function videovisible() {
+    document.getElementById('loading').style.display = 'none'
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const e = document.querySelector("video"),
+    n = e.getElementsByTagName("source")[0].src,
+    o = {};
+  if(Hls.isSupported()) {
+    var config = {
+      maxMaxBufferLength: 100,
+    };
+    const t = new Hls(config);
+    t.loadSource(n), t.on(Hls.Events.MANIFEST_PARSED, function(n, l) {
+      const s = t.levels.map(e => e.height);
+      o.quality = {
+        default: s[0],
+        options: s,
+        forced: !0,
+        onChange: e => (function(e) {
+          window.hls.levels.forEach((n, o) => {
+            n.height === e && (window.hls.currentLevel = o)
+          })
+        })(e)
+      };
+      new Plyr(e, o)
+    }), t.attachMedia(e), window.hls = t
+  } else {
+    new Plyr(e, o)
+  }
+});
+
