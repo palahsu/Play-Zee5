@@ -7,16 +7,6 @@
         "type": "git",
         "url": "git+https://github.com/palahsu/Play-Zee5.git"
     },
-    "keywords": [
-        "zee5",
-        "streamer",
-        "zee5 player",
-        "zee5 premium",
-        "avi patil",
-        "hls player",
-        "zee5 online player",
-        "zee5 downloader"
-    ],
     "author": "palahsu",
     "license": "Custom Lisence",
     "bugs": {
