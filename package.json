@@ -1,17 +1,26 @@
 {
-  "name": "ZEE",
-  "version": "1.0.0",
-  "description": "",
-  "main": "ZEE.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ZEE.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.16.3",
-    "socket.io": "^2.1.1"
-  }
+    "name": "ZEE5 Streamer",
+    "version": "2.0.0",
+    "description": "The Online ZEE5 Player and Downloader with Premium and Free Content With All Facality and Customizable Player ",
+    "main": "ZEE5.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/palahsu/Play-Zee5.git"
+    },
+    "keywords": [
+        "zee5",
+        "streamer",
+        "zee5 player",
+        "zee5 premium",
+        "avi patil",
+        "hls player",
+        "zee5 online player",
+        "zee5 downloader"
+    ],
+    "author": "palahsu",
+    "license": "Custom Lisence",
+    "bugs": {
+        "url": "https://github.com/palahsu/Play-Zee5/issues"
+    },
+    "homepage": "https://github.com/palahsu/Play-Zee5#readme"
 }
